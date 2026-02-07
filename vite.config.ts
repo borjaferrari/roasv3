@@ -6,7 +6,8 @@ export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
       server: {
-        port: 3000,
+        port: 9002,      // <--- AQUÍ
+        strictPort: true, // Esto evita que Vite salte al 9003 si hay un problema
         host: '0.0.0.0',
       },
       plugins: [react()],
